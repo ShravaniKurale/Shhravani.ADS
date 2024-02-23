@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class BallBounce {
+    public static void main(String[] args) {
+        final double g = 9.8;
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the initial height (in meters): ");
+        double initialHeight = scanner.nextDouble();
+
+        double distanceFirstBounce = initialHeight; 
+        double distanceSecondBounce = initialHeight / 2; 
+        double distanceThirdBounce = distanceSecondBounce / 2; 
+
+        double totalDistance = distanceFirstBounce + distanceSecondBounce + distanceThirdBounce;
+
+        System.out.println("Total distance traversed by the ball when it touches the ground for the third time: " + totalDistance + " meters");
+
+        scanner.close();
+    }
+}

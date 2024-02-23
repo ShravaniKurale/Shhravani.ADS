@@ -1,0 +1,22 @@
+public class AbsoluteDistanceSort {
+    public static void main(String[] args) {
+        int[] x = {9, 1, 12, 4, 2};
+        int z = 6;
+        dist_sort(x, x.length, z);
+        System.out.println("Sorted array:");
+        for (int value : x) {
+            System.out.print(value + " ");
+        }
+    }
+    private static void dist_sort(int[] x, int n, int z) {
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (Math.abs(x[j] - z) < Math.abs(x[i] - z)) {
+                    int temp = x[i];
+                    x[i] = x[j];
+                    x[j] = temp;
+                }
+            }
+        }
+    }
+}
